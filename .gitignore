@@ -1,0 +1,20 @@
+.DS_Store
+.ipynb_checkpoints/
+FinalSentimentAnalysis-Copy1.ipynb
+
+# Raw dataset downloads
+songs.csv
+artists.csv
+
+# Large generated artifacts
+X_combined.npz
+scaler.pkl
+tfidf_vectorizer.pkl
+songs_with_NRC.csv
+songs_with_NRC_VAD.csv
+songs_with_features.csv
+songs_with_clusters.csv
+songs_ready_for_classifier.csv
+transformer_training_data.csv
+transformer_emotion_model/
+
