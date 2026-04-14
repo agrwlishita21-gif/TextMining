@@ -1,0 +1,48 @@
+########################################################################################
+ v1: min_topic_size=100 + min 6 words per chunk of sentences + n_neighbors=80
+########################################################################################
+Overall Coherence Score: 0.3257
+Topic Diversity Score: 0.8314
+no. of topics: 328
+
+
+########################################################################################
+ v2: min_topic_size=100 + min 10 words per chunk of sentences + n_neighbors=80
+########################################################################################
+Overall Coherence Score: 0.4230
+Topic Diversity Score: 0.8000
+no. of topics: 106
+
+
+###############################################################################################################################################################
+ v3: min_topic_size=100 + min 12 words per chunk of sentences + n_neighbors=80 + outlier reduction (tf-idf) + using vader + remove stopwords + no slang map 
+###############################################################################################################################################################
+Overall Coherence Score: 0.4616
+Topic Diversity Score: 0.8091
+no. of topics: 66
+
+
+##############################################################################################################################################################
+ v4: min_topic_size=100 + min 12 words per chunk of sentences + n_neighbors=80 + outlier reduction (tf-idf) + using vader + keep stopwords + no slang map 
+##############################################################################################################################################################
+Overall Coherence Score: 0.3633
+Topic Diversity Score: 0.7293
+no. of topics: 297 
+
+
+##########################################################################################
+ v5: min_topic_size=100 + min 12 words per chunk of sentences + n_neighbors=40
+#########################################################################################
+Overall Coherence Score: 0.4543
+Topic Diversity Score: 0.7987
+no. of topics: 78
+
+
+######################################################################################
+ v6: min_topic_size=100 + min 12 words per chunk of sentences + n_neighbors=60
+######################################################################################
+Overall Coherence Score: 0.4554
+Topic Diversity Score: 0.8053
+no. of topics: 75
+
+
