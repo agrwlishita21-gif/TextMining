@@ -8,3 +8,13 @@ hdbscan
 bertopic
 fasttext
 nltk
+vaderSentiment
+nrclex
+langdetect
+torch
+transformers
+datasets
+groq
+scipy
+
+
