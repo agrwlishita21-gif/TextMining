@@ -99,11 +99,6 @@ Song-level splits (stratified):
 **Step 4 — Song-Level Inference**
 Chunk-level softmax probabilities are averaged per song to produce a final prediction:
 
-```
-song_prob[label] = mean(chunk_prob[label] for all chunks of song)
-predicted_label  = argmax(song_prob)
-```
-
 **Test Results (song-level)**
 
 | Class | Precision | Recall | F1 | Support |
