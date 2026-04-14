@@ -210,4 +210,82 @@ This experiment evaluates the effect of preprocessing on topic quality.
 
 Retaining stopwords introduced noise and resulted in fragmented, less interpretable topics. Removing stopwords significantly improved coherence and reduced the number of topics.
 
+## Topic Modelling: LDA & NMF
 
+> **Note:** The preprocessed dataset `songs_preprocessed.parquet` must be placed in the `data/` directory before running. Models and results are saved to `lda/` and `nmf/` directories respectively.
+
+**Note:** NMF was performed on the full dataset of **548,698 songs**, while LDA was performed on a subset due to the time it took.
+
+---
+
+### LDA (Latent Dirichlet Allocation)
+
+LDA was tuned from K=20 to K=100 (step 5) using Gensim, evaluated on **Coherence Score (Cv)** and **Topic Diversity**.
+
+#### Hyperparameter Tuning
+
+| Parameter | Value |
+|---|---|
+| Topic range tested | K = 20 to K = 100 (step 5) |
+| Passes | 10 |
+| Alpha | auto |
+| Eta | auto |
+| Chunk size | 2,000 |
+| Random state | 42 |
+
+#### Best LDA Result
+
+| Metric | Score |
+|---|---|
+| Coherence Score (Cv) | 0.4745 |
+| Diversity | 0.935 |
+
+#### Key Files Produced
+
+| File | Description |
+|---|---|
+| `lda/lda_dictionary.dict` | Fitted Gensim dictionary |
+| `lda/lda_corpus.mm` | Serialised Gensim corpus |
+| `lda/lda_tuning_results.csv` | Coherence & diversity scores per K |
+| `lda/tuning_models/lda_model_k{k}` | Saved LDA models for each K |
+
+---
+
+### NMF (Non-negative Matrix Factorization)
+
+NMF was tuned from K=20 to K=100 (step 5) using scikit-learn with TF-IDF vectorisation, evaluated on **Coherence Score (Cv)** and **Topic Diversity**.
+
+#### Hyperparameter Tuning
+
+| Parameter | Value |
+|---|---|
+| Topic range tested | K = 20 to K = 100 (step 5) |
+| Vectoriser | TF-IDF (max_df=0.90, min_df=10, ngram_range=(1,2)) |
+| NMF solver | `cd` (coordinate descent) |
+| Random state | 42 |
+
+#### Best NMF Result
+
+| Metric | Score |
+|---|---|
+| Coherence Score (Cv) | 0.6042 |
+| Topic Diversity | 0.8840 |
+
+#### Key Files Produced
+
+| File | Description |
+|---|---|
+| `nmf/tfidf_vectorizer.pkl` | Fitted TF-IDF vectorizer |
+| `nmf/nmf_model.pkl` | Best fitted NMF model |
+| `nmf/nmf_tuning_results.csv` | Coherence & diversity scores per K |
+
+---
+
+### LDA vs NMF Comparison
+
+| Model | Coherence Score (Cv) | Diversity | Notes |
+|---|---|---|---|
+| LDA | 0.4745 | 0.935 | Better probabilistic interpretability |
+| NMF | 0.6042 | 0.8840 | Higher Choerence; more semantically focused topics |
+
+> NMF provided better results at initial testing from K = 20 to K = 100. Parameters such as ngrams, max_df, and min_df were tuned to improve performance, achieving the final Coherence Score of 0.6042. As we focused on Coherence Score, we chose NMF as our final model.

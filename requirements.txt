@@ -18,5 +18,5 @@ groq
 scipy
 gensim 
 contractions
-
+seaborn
 
