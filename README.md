@@ -142,12 +142,33 @@ Happy       : 0.011
 
 The transformer model improves over the classical SVM by ~5 percentage points on both accuracy and macro F1, with the largest gains on the Energetic and Happy classes.
 
+## Resource Downloads
+
+### VADER Lexicon
+VADER is bundled with the `vaderSentiment` package and also available via NLTK:
+```bash
+pip install vaderSentiment
+
+# Or via NLTK:
+pip install nltk
+python -c "import nltk; nltk.download('vader_lexicon')"
+```
+
+### NRC Emotion Lexicon (NRCLex)
+Used for the 10 emotion dimensions (joy, sadness, anger, etc.):
+```bash
+pip install nrclex
+```
+NRCLex ships with its own lexicon file — no separate download needed.
+
+### NRC VAD Lexicon
+The `NRC-VAD-Lexicon.txt` file (Valence-Arousal-Dominance scores) must be downloaded separately from the NRC Canada website:
+> https://saifmohammad.com/WebPages/nrc-vad.html
 
 ## Data Requirements
 
 - `songs.csv` — Raw Spotify song dataset with lyrics and audio features
 - `artists.csv` — Artist metadata
-- `NRC-VAD-Lexicon.txt` — VAD lexicon (available from NRC Canada)
 - `llm_annotated_8500.csv` — Pre-generated LLM labels (produced by `FinalSentimentAnalysis.ipynb`)
 
 Run `FinalSentimentAnalysis.ipynb` first to generate all intermediate files before running `BERT_SentimentAnalysis.ipynb`.
