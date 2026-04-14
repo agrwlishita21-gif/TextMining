@@ -16,5 +16,7 @@ transformers
 datasets
 groq
 scipy
+gensim 
+contractions
 
 
