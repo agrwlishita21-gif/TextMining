@@ -212,7 +212,7 @@ Retaining stopwords introduced noise and resulted in fragmented, less interpreta
 
 ## Topic Modelling: LDA & NMF
 
-> **Note:** The preprocessed dataset `songs_preprocessed.parquet` must be placed in the `data/` directory before running. Models and results are saved to `lda/` and `nmf/` directories respectively.
+> **Note:** We make use of the same preprocessed dataset of songs_with_vader.csv. Models and results are saved to `lda/` and `nmf/` directories respectively.
 
 **Note:** NMF was performed on the full dataset of **548,698 songs**, while LDA was performed on a subset due to the time it took.
 
