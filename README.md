@@ -47,6 +47,7 @@ Per-class test F1 (SVM): Sad=0.78, Energetic=0.67, Happy=0.63, Angry=0.58
 | File | Description |
 |---|---|
 | `songs_ready_for_classifier.csv` | Cleaned dataset with all engineered features |
+| `songs_with_vader.csv` | Subset of the dataset with VADER sentiment scores applied (used for BERTopic and sentiment analysis experiments). |
 | `llm_annotated_8500.csv` | LLM emotion labels for 8,500 songs |
 | `tfidf_vectorizer.pkl` | Fitted TF-IDF vectorizer |
 | `scaler.pkl` | StandardScaler for dense features |
