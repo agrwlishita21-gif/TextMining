@@ -176,10 +176,11 @@ Run `FinalSentimentAnalysis.ipynb` first to generate all intermediate files befo
 
 
 ## Topic Modelling: BERTopic 
-Note: The file `lid.176.bin` is not included due to GitHub size limits.
+Steps to follow before running the code: 
+1. The file `lid.176.bin` is not included due to GitHub size limits.
 Please download it from: https://fasttext.cc/docs/en/language-identification.html and place it in the `topic_modelling/BERTopic/` directory.
 
-Additionally, ensure that the dataset `songs_with_vader.csv` is placed under the `Tmdata/DATA/` folder in the project root directory.
+2. Additionally, ensure that the dataset `songs_with_vader.csv` is placed under the `Tmdata/DATA/` folder in the project root directory.
 
 **Note:** BERTopic was performed on a sampled subset of 20,000 songs due to computational constraints.
 
